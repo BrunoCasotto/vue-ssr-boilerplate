@@ -10,7 +10,7 @@ const config = {
   watch: true,
   devtool: 'source-map',
   output: {
-    publicPath: '/',
+    publicPath: '',
   },
   resolve: {
     alias: {
