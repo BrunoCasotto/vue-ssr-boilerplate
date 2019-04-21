@@ -1,0 +1,4 @@
+{
+  "presets": ["@babel/preset-env"],
+  "plugins": ["transform-dynamic-import", "@babel/transform-runtime", "@babel/plugin-syntax-object-rest-spread", "@babel/plugin-syntax-dynamic-import"]
+}
