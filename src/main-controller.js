@@ -1,12 +1,12 @@
 const path = require('path')
 const { createRenderer } = require('vue-server-renderer')
-const template = require('fs').readFileSync(path.join(__dirname, 'template.html'),'utf-8')
+const template = require('fs').readFileSync(path.join(__dirname, '..', 'template.html'),'utf-8')
 const clientManifest = require('./../dist/vue-ssr-client-manifest.json')
 const serverBundle = require('./../dist/server.bundle')
 
 class MainController {
 
-  render(req, res) {
+  async render(req, res) {
     const { url } = req
 
     const context = {
@@ -20,7 +20,7 @@ class MainController {
       clientManifest,
     })
 
-    const app = serverBundle.default(context)
+    const app = await serverBundle.default(context)
 
     renderer.renderToString(app, context, (error, html) => {
       if (error) {
