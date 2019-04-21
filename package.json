@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "build:local": "cross-env NODE_ENV=dev webpack --config ./webpack/webpack.config.js"
+    "build:local": "cross-env NODE_ENV=dev webpack --config ./webpack/webpack.config.js",
+    "build": "cross-env NODE_ENV=prod webpack --config ./webpack/webpack.config.js"
   },
   "author": "Bruno Casott",
   "license": "ISC",
