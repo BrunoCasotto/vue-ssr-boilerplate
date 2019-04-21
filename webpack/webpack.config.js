@@ -10,7 +10,7 @@ const config = {
   watch: true,
   devtool: 'source-map',
   output: {
-    publicPath: 'static/',
+    publicPath: '/',
   },
   resolve: {
     alias: {
@@ -41,6 +41,15 @@ const config = {
           loader: 'file-loader',
           options: {
             name: '/images/[hash].[ext]',
+          },
+        },
+      },
+      {
+        test: /\.(ico)$/,
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: '/[name].[ext]',
           },
         },
       },

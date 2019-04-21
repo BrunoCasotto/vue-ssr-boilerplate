@@ -3,7 +3,10 @@ const VueSSRClientPlugin = require('vue-server-renderer/client-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
-  entry: path.join(__dirname, '..', 'entry', 'client.js'),
+  entry: [
+    path.join(__dirname, '..', 'entry', 'client.js'),
+    path.join(__dirname, '..', 'resources', 'images', 'favicon.ico'),
+  ],
   module: {
     rules: [
       {
