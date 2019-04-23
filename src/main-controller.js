@@ -12,7 +12,11 @@ class MainController {
     const context = {
       title: 'vue page',
       url,
-      state: {}
+      state: {
+        Utils: {
+          page: 'search'
+        }
+      }
     }
 
     const renderer = createRenderer({

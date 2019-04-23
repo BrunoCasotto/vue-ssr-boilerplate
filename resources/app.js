@@ -1,3 +1,5 @@
+import '@babel/polyfill'
+
 import Vue from 'vue'
 import Main from './Main.vue'
 import { createStore } from './store'

@@ -9,7 +9,7 @@ export const createRouter = () => {
   return new Router({
     mode: 'history',
     routes: [
-      { path: '/search', name:'search', component: Search },
+      { path: '/', name:'home', component: Search },
     ]
   })
 }
