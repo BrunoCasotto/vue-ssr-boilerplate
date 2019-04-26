@@ -6,6 +6,6 @@ A Vue SSR + Vuex + Vue Router + Webpack + Expressjs scaffolding project
 ```npm run build:local``` - development mode </br>
 ```npm run build``` - production mode</br></br>
 
-## run server
+## run server [other terminal tab]
 ```npm dev``` - development mode</br>
 ```npm start``` - production mode
