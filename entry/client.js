@@ -1,5 +1,5 @@
+import 'core-js/stable/promise'
 import { createApp } from '../resources/app'
-
 const { app, store, router } = createApp()
 
 if (window.__INITIAL_STATE__) {
