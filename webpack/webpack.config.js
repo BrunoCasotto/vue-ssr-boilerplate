@@ -1,16 +1,16 @@
 const path = require('path')
-const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const merge = require('webpack-merge')
 const serverConfig = require('./webpack.server')
 const clientConfig = require('./webpack.client')
-const env = process.env.NODE_ENV
+const rules = require('./partials/rules')
+const plugins = require('./partials/plugins')
 
 const config = {
   mode: 'development',
   watch: true,
   devtool: 'source-map',
   output: {
-    publicPath: '',
+    publicPath: '/static',
   },
   resolve: {
     alias: {
@@ -21,43 +21,9 @@ const config = {
     },
   },
   module: {
-    rules: [
-      {
-        test: /\.vue$/,
-        exclude: /node_modules/,
-        loader: 'vue-loader',
-        options: {},
-      },
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-        },
-      },
-      {
-        test: /\.(jpg|png|svg)$/,
-        use: {
-          loader: 'file-loader',
-          options: {
-            name: '/images/[hash].[ext]',
-          },
-        },
-      },
-      {
-        test: /\.(ico)$/,
-        use: {
-          loader: 'file-loader',
-          options: {
-            name: '/[name].[ext]',
-          },
-        },
-      },
-    ],
+    rules,
   },
-  plugins: [
-    new VueLoaderPlugin(),
-  ],
+  plugins,
 }
 
 module.exports = [
