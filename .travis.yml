@@ -1,1 +1,8 @@
 language: node_js
+node_js:
+  - "8.11.3"
+
+before_script:
+  - npm run eslint
+install:
+  - npm run build

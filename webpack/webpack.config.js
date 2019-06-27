@@ -6,7 +6,7 @@ const rules = require('./partials/rules')
 const plugins = require('./partials/plugins')
 
 const config = {
-  mode: 'development',
+  mode: process.env.NODE_ENV,
   watch: true,
   devtool: 'source-map',
   output: {
