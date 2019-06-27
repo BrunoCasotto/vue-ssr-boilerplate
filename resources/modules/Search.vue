@@ -1,8 +1,12 @@
 <template>
   <div class="content">
     <img class="content__img" src="~@images/logo.png" alt="Vue js logo">
-    <h1 class="content__title">Vue Js - Webpack - Express [TEMPLATE]</h1>
-    <p class="content__text">Initial template for vue ssr project.</p>
+    <h1 class="content__title">
+      Vue Js - Webpack - Express [TEMPLATE]
+    </h1>
+    <p class="content__text">
+      Initial template for vue ssr project.
+    </p>
   </div>
 </template>
 
