@@ -10,6 +10,10 @@
     "build": "cross-env NODE_ENV=prod webpack --config ./webpack/webpack.config.js",
     "eslint": "eslint --ext .js --ext .vue ./ --max-warnings=0"
   },
+  "engines": {
+    "node": "8.11.3",
+    "npm": "6.9.0"
+  },
   "author": "Bruno Casotto",
   "license": "ISC",
   "devDependencies": {
