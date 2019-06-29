@@ -14,7 +14,7 @@ const config = {
   watch: isProd ? false : true,
   devtool: isProd? false : 'source-map',
   output: {
-    publicPath: '/static',
+    publicPath: '/static/',
   },
   resolve: {
     alias,

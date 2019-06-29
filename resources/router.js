@@ -10,8 +10,8 @@ export const createRouter = () => {
     mode: 'history',
     fallback: false,
     routes: [
-      { path: '/', name:'home', component: Home },
-      { path: '/search', name:'search', component: Search },
+      { path: '/', component: Home },
+      { path: '/search', component: Search },
     ]
   })
 }
