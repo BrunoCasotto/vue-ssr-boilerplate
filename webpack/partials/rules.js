@@ -1,18 +1,6 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const isProd = process.env.NODE_ENV === 'production'
 
-const scssLoader = isProd ? [
-  MiniCssExtractPlugin.loader,
-  'css-loader',
-  'postcss-loader',
-  'sass-loader',
-]: [
-  'vue-style-loader',
-  'css-loader',
-  'postcss-loader',
-  'sass-loader'
-]
-
 const baseRules = [
   {
     test: /\.vue$/,
@@ -26,10 +14,6 @@ const baseRules = [
     use: {
       loader: 'babel-loader',
     },
-  },
-  {
-    test: /\.scss$/,
-    use: scssLoader,
   },
   {
     test: /\.(jpg|png|svg)$/,
@@ -51,4 +35,45 @@ const baseRules = [
   },
 ]
 
-module.exports = baseRules
+const basicScssLoader = [
+  'css-loader',
+  'postcss-loader',
+  'sass-loader'
+]
+
+const basicScssLoaderInline = [
+  'vue-style-loader',
+  ...basicScssLoader
+]
+
+// server configurations
+const scssServerLoader = isProd ?
+  basicScssLoader : basicScssLoaderInline
+
+
+const serverRules = [
+  ...baseRules,
+  {
+    test: /\.scss$/,
+    use: scssServerLoader,
+  },
+]
+
+ // client configurations
+const scssClientLoader = isProd ? [
+  MiniCssExtractPlugin.loader,
+  ...basicScssLoader
+] : basicScssLoaderInline
+
+const clientRules = [
+  ...baseRules,
+  {
+    test: /\.scss$/,
+    use: scssClientLoader,
+  },
+]
+
+module.exports = {
+  serverRules,
+  clientRules
+}

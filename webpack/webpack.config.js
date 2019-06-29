@@ -3,7 +3,6 @@ const merge = require('webpack-merge')
 const serverConfig = require('./webpack.server')
 const clientConfig = require('./webpack.client')
 
-const rules = require('./partials/rules')
 const { plugins } = require('./partials/plugins')
 const alias = require('./partials/alias')
 
@@ -18,9 +17,6 @@ const config = {
   },
   resolve: {
     alias,
-  },
-  module: {
-    rules,
   },
   plugins,
 }

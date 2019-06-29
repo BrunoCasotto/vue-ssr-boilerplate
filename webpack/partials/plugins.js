@@ -5,10 +5,6 @@ const VueSSRClientPlugin = require('vue-server-renderer/client-plugin')
 
 const plugins = [
   new VueLoaderPlugin(),
-  new MiniCssExtractPlugin({
-    filename: '[name].css',
-    chunkFilename: '[id].css',
-  }),
 ]
 
 const serverPlugins = [
@@ -17,6 +13,10 @@ const serverPlugins = [
 
 const clientPlugins = [
   new VueSSRClientPlugin(),
+  new MiniCssExtractPlugin({
+    filename: '[name].css',
+    chunkFilename: '[id].css',
+  }),
 ]
 
 module.exports = {
