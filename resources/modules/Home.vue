@@ -1,7 +1,7 @@
 <template>
-  <div class="search">
-    Search page -
-    <router-link to="/">Go to Home</router-link>
+  <div class="home">
+    Home page -
+    <router-link to="/search">Go to Search</router-link>
   </div>
 </template>
 
@@ -10,7 +10,7 @@
 </script>
 
 <style lang="scss" scoped>
-  .search {
+  .home {
     color: green;
     font-weight: bold;
     font-size: 20px;

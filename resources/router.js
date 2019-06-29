@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 Vue.use(Router)
+const Home = () => import('@modules/Home.vue')
 const Search = () => import('@modules/Search.vue')
 
 export const createRouter = () => {
@@ -9,7 +10,8 @@ export const createRouter = () => {
     mode: 'history',
     fallback: false,
     routes: [
-      { path: '/', name:'home', component: Search },
+      { path: '/', name:'home', component: Home },
+      { path: '/search', name:'search', component: Search },
     ]
   })
 }
