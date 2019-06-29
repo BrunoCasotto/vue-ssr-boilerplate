@@ -1,6 +1,6 @@
 const path = require('path')
 const nodeExternals = require('webpack-node-externals')
-const VueSSRServerPlugin = require('vue-server-renderer/server-plugin')
+const { serverPlugins } = require('./partials/plugins')
 
 module.exports = {
   entry: path.join(__dirname, '..', 'entry', 'server.js'),
@@ -12,7 +12,5 @@ module.exports = {
   externals: nodeExternals({
     whitelist: /\.css$/,
   }),
-  plugins: [
-    new VueSSRServerPlugin(),
-  ]
+  plugins: serverPlugins,
 }

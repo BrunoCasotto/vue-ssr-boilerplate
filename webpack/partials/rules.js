@@ -1,4 +1,17 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const isProd = process.env.NODE_ENV === 'production'
+
+const scssLoader = isProd ? [
+  MiniCssExtractPlugin.loader,
+  'css-loader',
+  'postcss-loader',
+  'sass-loader',
+]: [
+  'vue-style-loader',
+  'css-loader',
+  'postcss-loader',
+  'sass-loader'
+]
 
 const baseRules = [
   {
@@ -16,12 +29,7 @@ const baseRules = [
   },
   {
     test: /\.scss$/,
-    use: [
-      MiniCssExtractPlugin.loader,
-      'css-loader',
-      'postcss-loader',
-      'sass-loader',
-    ],
+    use: scssLoader,
   },
   {
     test: /\.(jpg|png|svg)$/,

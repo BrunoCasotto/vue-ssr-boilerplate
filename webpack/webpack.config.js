@@ -1,24 +1,23 @@
-const path = require('path')
 const merge = require('webpack-merge')
+
 const serverConfig = require('./webpack.server')
 const clientConfig = require('./webpack.client')
+
 const rules = require('./partials/rules')
-const plugins = require('./partials/plugins')
+const { plugins } = require('./partials/plugins')
+const alias = require('./partials/alias')
+
+const isProd = process.env.NODE_ENV === 'production'
 
 const config = {
-  mode: process.env.NODE_ENV,
-  watch: true,
-  devtool: 'source-map',
+  mode: isProd ? 'production' : 'development',
+  watch: isProd ? false : true,
+  devtool: isProd? false : 'source-map',
   output: {
     publicPath: '/static',
   },
   resolve: {
-    alias: {
-      '@components': path.join(__dirname, '..', 'resources', 'components'),
-      '@images': path.join(__dirname, '..', 'resources', 'images'),
-      '@modules': path.join(__dirname, '..', 'resources', 'modules'),
-      '@public': path.join(__dirname, '..', 'dist'),
-    },
+    alias,
   },
   module: {
     rules,
