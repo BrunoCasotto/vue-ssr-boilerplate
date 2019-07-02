@@ -1,14 +1,12 @@
 const renderFactory = require('./renderFactory')
 const contextFactory = require('./contextFactory')
-
+const apiService = require('./service')
 class MainController {
-
   async render(req, res) {
+    const { id } = req.query
+    //mock purpose
     const dataFromApi = {
-      product: {
-        name: 'product_name',
-        price: 10000,
-      },
+      product: apiService.getProduct(id)
     }
 
     const { url } = req

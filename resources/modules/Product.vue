@@ -6,6 +6,9 @@
     <label>Product Price</label>
     <p>{{ price }}</p>
 
+    <label>Product id</label>
+    <p>{{ id }}</p>
+
     <router-link to="/search">Back to Search</router-link>
   </div>
 </template>
@@ -14,8 +17,10 @@
   import { mapState } from 'vuex'
 
   export default {
+    name: 'Product',
+    serverCacheKey: () => 'pdp',
     computed: {
-      ...mapState('Product', ['name', 'price']),
+      ...mapState('Product', ['name', 'price', 'id']),
     }
   }
 </script>

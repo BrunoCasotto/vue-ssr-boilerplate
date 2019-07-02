@@ -1,5 +1,6 @@
 const path = require('path')
 const { createBundleRenderer } = require('vue-server-renderer')
+const LRU = require('lru-cache')
 
 const templatePath = path.join(__dirname, '..', '..', 'template.html')
 const template = require('fs').readFileSync(templatePath,'utf-8')
@@ -14,6 +15,10 @@ class RenderFactory {
 
   createRenderer() {
     const renderer = createBundleRenderer(serverBundle, {
+      cache: new LRU({
+        max: 10000,
+        maxAge: 1000 * 15
+      }),
       template,
       clientManifest,
     })
