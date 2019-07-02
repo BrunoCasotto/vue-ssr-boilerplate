@@ -7,6 +7,13 @@ export default context => new Promise((resolve, reject) => {
   const { url } = context
 
   router.push(url)
+
+  //server side render completly
+  router.beforeResolve((to, from, next) => {
+    store.replaceState(context.state)
+    next()
+  })
+
   router.onReady(() => {
     const matchedComponents = router.getMatchedComponents()
 
