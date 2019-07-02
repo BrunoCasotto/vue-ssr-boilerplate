@@ -5,6 +5,7 @@ const port = process.env.PORT || 8080
 
 const staticPath = path.resolve(__dirname, 'dist')
 app.use('/static', express.static(staticPath))
+app.use('/favicon.ico', express.static(`${staticPath}/favicon.ico`))
 
 const MainController = require('./src/controller')
 const controller = new MainController()
