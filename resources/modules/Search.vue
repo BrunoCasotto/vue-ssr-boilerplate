@@ -1,8 +1,12 @@
 <template>
   <div class="search">
     Search page -
-    <router-link to="/">Back to Home</router-link>
-    <router-link to="/product">Go to Product</router-link>
+    <router-link to="/">
+      Back to Home
+    </router-link>
+    <router-link to="/product">
+      Go to Product
+    </router-link>
   </div>
 </template>
 

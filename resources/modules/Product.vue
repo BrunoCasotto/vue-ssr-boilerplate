@@ -9,7 +9,9 @@
     <label>Product id</label>
     <p>{{ id }}</p>
 
-    <router-link to="/search">Back to Search</router-link>
+    <router-link to="/search">
+      Back to Search
+    </router-link>
   </div>
 </template>
 
