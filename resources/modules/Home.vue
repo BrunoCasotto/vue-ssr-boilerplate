@@ -1,7 +1,9 @@
 <template>
   <div class="home">
     Home page -
-    <router-link to="/search">Go to Search</router-link>
+    <router-link to="/search">
+      Go to Search
+    </router-link>
   </div>
 </template>
 

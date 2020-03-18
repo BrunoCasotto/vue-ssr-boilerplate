@@ -1,7 +1,9 @@
 <template>
   <div class="home">
     404 - not found
-    <router-link to="/">Go to Home</router-link>
+    <router-link to="/">
+      Go to Home
+    </router-link>
   </div>
 </template>
 
