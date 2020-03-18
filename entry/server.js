@@ -8,7 +8,7 @@ export default context => new Promise((resolve, reject) => {
 
   //server side render completly
   router.beforeResolve((to, from, next) => {
-    store.replaceState(context.state)
+    store.replaceState({ ...store.state, ...context.state})
     next()
   })
 
